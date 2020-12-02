@@ -1,0 +1,850 @@
+
+<style>
+
+    /*! CSS Used from: https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-dependencies.min.fa1f4be1ec299ba14c26f17c84d7092b.css */
+.swiper-container{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1;}
+.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-box-sizing:content-box;box-sizing:content-box;}
+.swiper-container-android .swiper-slide,.swiper-wrapper{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);}
+.swiper-slide{-ms-flex-negative:0;flex-shrink:0;width:100%;height:100%;position:relative;-webkit-transition-property:-webkit-transform;transition-property:-webkit-transform;transition-property:transform;transition-property:transform,-webkit-transform;}
+.swiper-container .swiper-notification{position:absolute;left:0;top:0;pointer-events:none;opacity:0;z-index:-1000;}
+.swiper-container-fade .swiper-slide{pointer-events:none;-webkit-transition-property:opacity;transition-property:opacity;}
+.swiper-container-fade .swiper-slide-active{pointer-events:auto;}
+/*! CSS Used from: https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-base.min.1a15be302b82a6ef6795f6c07b098e6a.css */
+.bg-white{background-color:#fff!important;color:#000;}
+.text-color--black{color:#000!important;}
+.text-color--white{color:#fff!important;}
+.margin-top--narrow{padding-top:16px;}
+.swiper-autoplay-stop-btn{font-size:0;width:0;height:0;}
+@media only screen and (min-width:768px) and (max-width:1440px){
+.margin-top--narrow{padding-top:1.11111111vw;}
+}
+@media only screen and (max-width:767px){
+.margin-top--narrow{padding-top:4.44444444vw;}
+}
+a{background-color:transparent;}
+sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+img{border-style:none;}
+button{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}
+button{overflow:visible;}
+button{text-transform:none;}
+button,[type="button"]{-webkit-appearance:button;}
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner{border-style:none;padding:0;}
+button:-moz-focusring,[type="button"]:-moz-focusring{outline:1px dotted ButtonText;}
+button{border:0;margin:0;padding:0;width:auto;overflow:visible;background:transparent;text-align:inherit;border-radius:0;cursor:pointer;color:inherit;font:inherit;line-height:normal;-webkit-font-smoothing:inherit;-moz-osx-font-smoothing:inherit;-webkit-appearance:none;}
+div,span,h2,p,img,sup,section{margin:0;padding:0;vertical-align:top;-webkit-box-sizing:border-box;box-sizing:border-box;}
+section{display:block;}
+h2{font-size:100%;}
+img{border:0 none;vertical-align:top;}
+a{text-decoration:none;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.hidden{display:block;overflow:hidden;position:absolute!important;width:1px;height:1px;font-size:1px;line-height:1px;clip:rect(1px,1px,1px,1px);}
+sup{vertical-align:baseline;}
+.cta{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;vertical-align:middle;-webkit-transition-property:color,background-color,border-color,border-bottom-color;transition-property:color,background-color,border-color,border-bottom-color;-webkit-transition-duration:.2s;transition-duration:.2s;-webkit-transition-timing-function:cubic-bezier(0.33,0,0.3,1);transition-timing-function:cubic-bezier(0.33,0,0.3,1);font-family:'SamsungOne',arial,sans-serif;font-size:14px;font-weight:bold;line-height:19px;white-space:nowrap;}
+.cta--contained{padding:10px 24px 11px 24px;border-radius:20px;}
+.cta--contained.cta--black{color:#fff!important;background-color:#000!important;}
+.cta--contained.cta--black:hover,.cta--contained.cta--black:focus{color:#eee!important;background-color:#555!important;}
+.cta--contained.cta--white{color:#000!important;background-color:#fff!important;}
+.cta--contained.cta--white:hover,.cta--contained.cta--white:focus{color:#313131!important;background-color:#ddd!important;}
+.cta--underline{padding:10px 0 11px 0;}
+.cta--underline:after{content:' ';position:absolute;left:0;right:0;bottom:8px;height:2px;background-color:currentColor;}
+.cta--underline:hover:after,.cta--underline:focus:after{-webkit-animation:cta-underline-animation .2s both;animation:cta-underline-animation .2s both;-webkit-animation-timing-function:cubic-bezier(0.4,0,0.2,1);animation-timing-function:cubic-bezier(0.4,0,0.2,1);-webkit-animation-delay:.1s;animation-delay:.1s;}
+.cta--underline.cta--black{color:#000!important;}
+.cta--underline.cta--black:hover,.cta--underline.cta--black:focus{color:#555!important;}
+.cta--underline.cta--white{color:#fff!important;}
+.cta--underline.cta--white:hover,.cta--underline.cta--white:focus{color:#ddd!important;}
+.bg-white .cta--contained{color:#fff;background-color:#000;}
+.bg-white .cta--contained:hover,.bg-white .cta--contained:focus{color:#eee;background-color:#555;}
+.bg-white .cta--underline{color:#000;}
+.bg-white .cta--underline:hover,.bg-white .cta--underline:focus{color:#555;}
+@media only screen and (min-width:768px) and (max-width:1440px){
+.cta{font-size:.97222222vw;line-height:1.31944444vw;}
+.cta--contained{padding:.69444444vw 1.66666667vw .76388889vw 1.66666667vw;border-radius:1.38888889vw;}
+.cta--underline{padding:.69444444vw 0vw .76388889vw 0vw;}
+.cta--underline:after{bottom:.55555556vw;height:.13888889vw;}
+}
+@media only screen and (max-width:767px){
+.cta{font-size:3.88888889vw;line-height:5.27777778vw;}
+.cta--contained{padding:2.77777778vw 6.66666667vw 3.05555556vw 6.66666667vw;border-radius:5.55555556vw;}
+.cta--underline{padding:2.77777778vw 0vw 3.05555556vw 0vw;}
+.cta--underline:after{bottom:2.22222222vw;height:.55555556vw;}
+}
+.icon{cursor:pointer;}
+.image{display:inline-block;position:relative;width:100%;font-size:0;}
+.image__preview,.image__main{display:inline-block;width:100%;height:auto;opacity:0;visibility:hidden;}
+.image__preview:not([src]),.image__main:not([src]){height:0;}
+.image__preview+.image__main{position:absolute;left:0;top:0;}
+.image--loaded{opacity:1;visibility:visible;}
+.image--hide{visibility:hidden;}
+.indicator{text-align:center;font-size:0;}
+.indicator-wrap{display:inline-block;direction:rtl;white-space:nowrap;}
+.indicator__controls{width:16px;height:16px;vertical-align:middle;}
+.indicator__controls svg{width:100%;height:100%;}
+.indicator__controls .play{display:none;}
+.indicator__controls .pause{display:inline;}
+.text-color--black .indicator__controls svg{fill:#000;}
+.label-indicator .indicator__controls{margin-left:16px;}
+.indicator__list-wrap{display:inline-block;direction:ltr;vertical-align:middle;}
+.label-indicator .indicator__list-wrap{height:56px;white-space:nowrap;}
+.label-indicator .indicator__list{display:flex;align-items:flex-end;height:43px;}
+.label-indicator .indicator__item{display:inline-flex;align-items:flex-end;width:160px;min-height:30px;margin-right:16px;}
+.label-indicator .indicator__item:after{content:'';min-height:inherit;font-size:0;}
+.label-indicator .indicator__item:last-of-type{margin-right:0;}
+.indicator__dot{left:50%;top:50%;transform:translate(-50%,-50%);position:absolute;display:inline-block;height:50%;width:50%;}
+.indicator__dot-wrap{position:relative;display:inline-block;width:16px;height:16px;}
+.label-indicator .indicator__dot-wrap{display:none;}
+.indicator__dot-inner{width:100%;height:100%;left:0;top:0;position:absolute;border-radius:50%;background-color:rgba(0,0,0,0.4);}
+.text-color--black .indicator__dot-inner{background-color:rgba(0,0,0,0.4);}
+.indicator__item--active .indicator__dot-inner{background-color:#000;}
+.text-color--black .indicator__item--active .indicator__dot-inner{background-color:#000;}
+.indicator__label{width:100%;display:inline-block;padding-top:5px;padding-bottom:6px;font-family:'SamsungOne',arial,sans-serif;font-size:14px;font-weight:bold;line-height:19px;color:#000;opacity:0;transition:color .4s cubic-bezier(0.4,0,0.2,1),opacity .4s cubic-bezier(0.4,0,0.2,1);}
+.indicator__label-wrap{display:inline-block;position:relative;width:100%;margin-bottom:13px;}
+.indicator__label-line{position:absolute;left:0;bottom:0;width:100%;height:2px;background:rgba(0,0,0,0.2);}
+.text-color--black .indicator__label-line{background-color:rgba(0,0,0,0.2);}
+.indicator__label-line-filled{position:absolute;left:0;width:100%;height:100%;background:#000;transform-origin:left;transform:scaleX(0);opacity:0;transition:opacity .2s cubic-bezier(0.4,0,0.2,1),transform 0 .2s;}
+.text-color--black .indicator__label-line-filled{background-color:#000;}
+.indicator__item--not-hover .indicator__label{opacity:0;transition-duration:.2s;}
+.text-color--black .indicator__label{color:#000;}
+.indicator__item--active .indicator__label-line{background:rgba(0,0,0,0.4);}
+.text-color--black .indicator__item--active .indicator__label-line{background-color:rgba(0,0,0,0.4);}
+.indicator__item--active .indicator__label-line-filled{opacity:1;transition:none;}
+@media only screen and (min-width:768px) and (max-width:1440px){
+.indicator__controls{width:1.11111111vw;height:1.11111111vw;}
+.label-indicator .indicator__controls{margin-left:1.11111111vw;}
+.label-indicator .indicator__list-wrap{height:3.88888889vw;}
+.label-indicator .indicator__list{height:2.98611111vw;}
+.label-indicator .indicator__item{width:11.11111111vw;min-height:2.08333333vw;margin-right:1.11111111vw;}
+.indicator__label{padding-top:.34722222vw;padding-bottom:.41666667vw;line-height:1.31944444vw;font-size:.97222222vw;}
+.indicator__label-wrap{margin-bottom:.90277778vw;}
+.indicator__dot-wrap{width:1.11111111vw;height:1.11111111vw;}
+}
+@media only screen and (max-width:767px){
+.indicator__controls{width:4.44444444vw;height:4.44444444vw;}
+.indicator__dot-wrap{width:4.44444444vw;height:4.44444444vw;}
+.indicator__label-wrap{display:none;}
+}
+.arrow-indicator{position:absolute;top:50%;transform:translateY(-50%);}
+.arrow-indicator-wrap{position:absolute;top:50%;left:50%;width:100%;height:0;transform:translate(-50%,-50%);z-index:600;}
+.arrow-indicator svg{width:100%;height:100%;}
+.arrow-indicator--contained{width:56px;height:56px;padding:8px;}
+.arrow-indicator--contained svg>g>g>circle{fill:#000;fill-opacity:.45;stroke:#fff;stroke-opacity:.15;transition:fill .1s cubic-bezier(0.4,0,0.2,1),fill-opacity .1s cubic-bezier(0.4,0,0.2,1);}
+.arrow-indicator--contained svg>g>g>g{fill:#fff;fill-opacity:.95;}
+.arrow-indicator--contained:focus svg>g>g>circle,.arrow-indicator--contained:hover svg>g>g>circle{fill:#1c1c1c;fill-opacity:1;}
+.arrow-indicator--prev{left:0;}
+.arrow-indicator--next{right:0;}
+@media only screen and (min-width:768px) and (max-width:1440px){
+.arrow-indicator--contained{width:3.88888889vw;height:3.88888889vw;padding:.55555556vw;}
+}
+@media only screen and (max-width:767px){
+.arrow-indicator--contained{width:15.55555556vw;height:15.55555556vw;padding:2.22222222vw;}
+}
+.popup-video{display:none;}
+.popup-video__dimmed{position:absolute;left:0;right:0;top:0;bottom:0;background-color:#000;opacity:.68;}
+.popup-video__video-wrap{position:relative;z-index:3100;}
+.popup-video__btn-video-close{position:fixed;display:inline-block;top:24px;right:24px;width:36px;height:36px;font-size:0;}
+.popup-video__btn-video-close svg{width:100%;height:100%;fill:#fff;}
+@media only screen and (min-width:768px) and (max-width:1440px){
+.popup-video__btn-video-close{top:1.66666667vw;right:1.66666667vw;width:2.5vw;height:2.5vw;}
+}
+@media only screen and (max-width:767px){
+.popup-video__btn-video-close{top:6.66666667vw;right:6.66666667vw;width:6.66666667vw;height:6.66666667vw;}
+}
+.video{position:relative;height:auto;font-size:0;}
+.video .image{visibility:hidden;opacity:0;}
+.video .image img{width:100%;height:100%;}
+.video .default-image--show{visibility:visible;opacity:1;}
+/*! CSS Used from: https://www.samsung.com/etc.clientlibs/samsung/components/content/consumer/global/home/ho-g-home-kv-carousel/clientlibs/site.min.e684325114d025f7ece93e3033534af3.css */
+.home-kv-carousel{position:relative;width:100%;font-size:0;overflow:hidden;}
+.home-kv-carousel__container{width:100%;}
+.home-kv-carousel__slide-inner{position:relative;width:100%;max-width:1440px;margin:0 auto;}
+.home-kv-carousel__background-media-wrap{position:relative;height:100%;overflow:hidden;z-index:500;}
+.home-kv-carousel__background-media-wrap .image{position:absolute;top:0;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);width:100%;}
+.home-kv-carousel__background-media-wrap .video{height:100%;}
+.home-kv-carousel__headline{font-family:'SamsungSharpSans',arial,sans-serif;font-weight:bold;font-size:48px;line-height:1.2;color:currentColor;word-wrap:break-word;}
+.home-kv-carousel__headline:first-of-type{display:block;}
+.home-kv-carousel__headline:nth-of-type(2){display:none;}
+.home-kv-carousel__desc{margin-top:24px;font-size:18px;line-height:1.33;color:currentColor;word-wrap:break-word;}
+.home-kv-carousel__desc:first-of-type{display:block;}
+.home-kv-carousel__desc:nth-of-type(2){display:none;}
+.home-kv-carousel__cta-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:40px;}
+.home-kv-carousel__cta-wrap .cta:first-child:nth-last-child(2){-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;}
+.home-kv-carousel__cta-wrap .cta:first-child:nth-last-child(2)+.cta{-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2;margin-left:20px;}
+.home-kv-carousel__text-wrap{position:absolute;width:620px;z-index:600;}
+.home-kv-carousel__text-wrap--desktop-top-center{width:720px;top:80px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);text-align:center;}
+.home-kv-carousel__text-wrap--desktop-top-center .home-kv-carousel__cta-wrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;}
+.home-kv-carousel--height-large .home-kv-carousel__slide-inner{height:810px;}
+.home-kv-carousel .arrow-indicator-wrap{max-width:1440px;}
+.home-kv-carousel__indicator-wrap{position:absolute;left:50%;bottom:0;width:100%;max-width:1440px;height:80px;-webkit-transform:translateX(-50%);transform:translateX(-50%);z-index:600;}
+.home-kv-carousel__indicator-wrap .indicator{position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);top:4px;background-color:transparent!important;}
+.home-kv-carousel.margin-top--narrow{padding-top:0;}
+.home-kv-carousel.margin-top--narrow .home-kv-carousel__slide{padding-top:16px;}
+.home-kv-carousel__no-swiping-area--left,.home-kv-carousel__no-swiping-area--right{position:absolute;top:0;bottom:0;z-index:600;background-color:transparent;}
+.home-kv-carousel__no-swiping-area--left{left:0;}
+.home-kv-carousel__no-swiping-area--right{right:0;}
+@media only screen and (min-width:768px) and (max-width:1440px){
+.home-kv-carousel__headline{font-size:3.33333333vw;}
+.home-kv-carousel__desc{margin-top:1.66666667vw;font-size:1.25vw;}
+.home-kv-carousel__cta-wrap{margin-top:2.77777778vw;}
+.home-kv-carousel__cta-wrap .cta:first-child:nth-last-child(2)+.cta{margin-left:1.38888889vw;}
+.home-kv-carousel__text-wrap{width:43.05555556vw;}
+.home-kv-carousel__text-wrap--desktop-top-center{width:50vw;top:5.55555556vw;}
+.home-kv-carousel--height-large .home-kv-carousel__slide-inner{height:56.25vw;}
+.home-kv-carousel__indicator-wrap{height:5.55555556vw;}
+.home-kv-carousel__indicator-wrap .indicator{top:.27777778vw;}
+.home-kv-carousel.margin-top--narrow .home-kv-carousel__slide{padding-top:1.11111111vw;}
+}
+@media only screen and (max-width:767px){
+.home-kv-carousel__background-media-wrap .image{width:100%!important;}
+.home-kv-carousel__headline{font-size:8.33333333vw;line-height:1.33;}
+.home-kv-carousel__headline:first-of-type{display:none;}
+.home-kv-carousel__headline:nth-of-type(2){display:block;}
+.home-kv-carousel__desc{margin-top:4.44444444vw;font-size:3.88888889vw;}
+.home-kv-carousel__desc:first-of-type{display:none;}
+.home-kv-carousel__desc:nth-of-type(2){display:block;}
+.home-kv-carousel__cta-wrap{margin-top:6.66666667vw;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;}
+.home-kv-carousel__cta-wrap .cta:first-child:nth-last-child(2){-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2;margin-top:2.22222222vw;}
+.home-kv-carousel__cta-wrap .cta:first-child:nth-last-child(2)+.cta{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;margin-left:0;}
+.home-kv-carousel__text-wrap{width:86.66666667vw;top:auto;bottom:auto;left:50%;right:auto;-webkit-transform:translateX(-50%);transform:translateX(-50%);}
+.home-kv-carousel__text-wrap--mobile-top-center{top:11.11111111vw;text-align:center;}
+.home-kv-carousel__text-wrap--mobile-top-center .home-kv-carousel__cta-wrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center;}
+.home-kv-carousel--height-large .home-kv-carousel__slide-inner{height:177.77777778vw;}
+.home-kv-carousel .arrow-indicator-wrap{display:none;}
+.home-kv-carousel__indicator-wrap{height:13.33333333vw;background-image:none;}
+.home-kv-carousel__indicator-wrap .indicator{top:0;}
+.home-kv-carousel.margin-top--narrow .home-kv-carousel__slide{padding-top:4.44444444vw;}
+.home-kv-carousel__no-swiping-area--left,.home-kv-carousel__no-swiping-area--right{display:none;}
+}
+/*! CSS Used from: Embedded */
+.home-kv-carousel__container{margin:auto;}
+/*! CSS Used keyframes */
+@-webkit-keyframes cta-underline-animation{from{visibility:hidden;-webkit-transform:scaleX(0);transform:scaleX(0);}to{visibility:visible;-webkit-transform:scaleX(1);transform:scaleX(1);}}
+@keyframes cta-underline-animation{from{visibility:hidden;-webkit-transform:scaleX(0);transform:scaleX(0);}to{visibility:visible;-webkit-transform:scaleX(1);transform:scaleX(1);}}
+/*! CSS Used fontfaces */
+@font-face{font-display:swap;font-family:'SamsungOne';font-style:normal;font-weight:normal;src:local('SamsungOne'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-400.woff2') format('woff2'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-400.woff') format('woff'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-400.ttf') format('truetype'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-400.eot#iefix') format('embedded-opentype');}
+@font-face{font-display:swap;font-family:'SamsungOne';font-style:normal;font-weight:bold;src:local('SamsungOne'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-700.woff2') format('woff2'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-700.woff') format('woff'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-700.ttf') format('truetype'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungOne-700.eot#iefix') format('embedded-opentype');}
+@font-face{font-display:swap;font-family:'SamsungSharpSans';font-style:normal;font-weight:bold;src:local('SamsungSharpSans'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungSharpSansBd.woff2') format('woff2'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungSharpSansBd.woff') format('woff'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungSharpSansBd.eot#iefix') format('embedded-opentype');}
+@font-face{font-display:swap;font-family:'SamsungSharpSans';font-style:normal;font-weight:normal;src:local('SamsungSharpSans'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungSharpSansBd.woff2') format('woff2'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungSharpSansBd.woff') format('woff'),url('https://www.samsung.com/etc.clientlibs/samsung/clientlibs/consumer/global/clientlib-common/resources/fonts/SamsungSharpSansBd.eot#iefix') format('embedded-opentype');}
+</style>
+
+
+
+
+<div class="ho-g-home-kv-carousel aem-GridColumn aem-GridColumn--default--12">
+
+
+    <section class="home-kv-carousel margin-top--narrow home-kv-carousel--height-large indicator-container text-color--white">
+        <div class="home-kv-carousel__no-swiping-area--left" style="width: 0px;"></div><div class="home-kv-carousel__container swiper-container swiper-container-fade swiper-container-initialized swiper-container-horizontal swiper-container-android">
+            
+            <button tabindex="0" type="button" class="swiper-autoplay-stop-btn" role="button" data-ae-blurbtype="button" aria-label="Play">
+                <span class="hidden">Stop automatic slide show</span>
+            </button>
+            <div class="home-kv-carousel__wrapper swiper-wrapper" style="transition-duration: 400ms;"><div class="home-kv-carousel__slide bg-white swiper-slide indicator-page swiper-slide-duplicate swiper-slide-duplicate-active" an-tr="hd01_home kv carousel-home-image-swipe6" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv6" data-swiper-slide-index="5" aria-hidden="true" style="width: 1143px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 400ms;">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--white home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Galaxy Tab S7 | Tab S7+</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Galaxy Tab S7 | Tab S7+</h2>
+                            <p class="home-kv-carousel__desc">Get up to $500 off the new Galaxy Tab S7 or Galaxy Tab S7+ with eligible trade-in.ᶿ<br>Plus, get 3 months of Xbox Game Pass Ultimate and controller with Galaxy Tab S7+ purchase.</p>
+                            <p class="home-kv-carousel__desc">Get up to $500 off the new Galaxy Tab S7 or Galaxy Tab S7+ with eligible trade-in.ᶿ<br>Plus, get 3 months of Xbox Game Pass Ultimate and controller with Galaxy Tab S7+ purchase.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--underline cta--white" href="/us/tablets/tab-s7/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv6:galaxy tab s7 tab s7 plus:button1:learn more:20201120" tabindex="-1" aria-hidden="true">
+                                            Learn more
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--white" href="/us/tablets/tab-s7/buy/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv6:galaxy tab s7 tab s7 plus:button2:buy now:20201120" tabindex="-1" aria-hidden="true">
+                                            Buy now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            <div class="image">
+                                
+                                
+                                <img class="image__preview lazy-load-man responsive-img" data-desktop-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg" data-mobile-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg" alt="" data-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg">
+                                <img class="image__main responsive-img lazy-load-man" data-desktop-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg" data-mobile-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg" alt="" data-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg">
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page swiper-slide-duplicate-next" an-tr="hd01_home kv carousel-home-image-swipe1" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv1" data-swiper-slide-index="0" style="width: 1143px; opacity: 0; transform: translate3d(-1143px, 0px, 0px); transition-duration: 400ms;" aria-hidden="true">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--black home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Black Friday mode<br>is on</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Black Friday mode<br>is on</h2>
+                            <p class="home-kv-carousel__desc">Wrap up something extra-special for the holiday with Black Friday pricing on our hottest products of the year.</p>
+                            <p class="home-kv-carousel__desc">Wrap up something extra-special for the holiday with Black Friday pricing on our hottest products of the year.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--black" href="/us/shop/all-deals/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv1:black friday mode is on:button1:shop now:20201110" tabindex="-1" aria-hidden="true">
+                                            Shop now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            
+                            <div class="video" data-image-default="true" data-video-embed="true" data-video-type="mp4" data-video-data="{ 
+                                &quot;desktopSrc&quot;: &quot;//images.samsung.com/is/content/samsung/assets/us/home/111920/HolidayCreative-BlackFriday_Desktop-EndFrame-new.mp4&quot;,
+                                &quot;mobileSrc&quot;: &quot;//images.samsung.com/is/content/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Mobile-5kbps.mp4&quot;,
+                                &quot;title&quot;: &quot;Black Friday mode is on&quot;,
+                                &quot;caption&quot;: &quot;&quot;,
+                                &quot;muted&quot;: true,
+                                &quot;autoplay&quot;: false,
+                                &quot;loop&quot;: false,
+                                &quot;controls&quot;: false
+                                }">
+                                <div class="image image--main-loaded default-image--show" style="width: 100%; height: 100%;">
+                                    
+                                    <img class="image__main responsive-img" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Desktop_StartFrame.jpg?$ORIGIN_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Mobile_StartFrame.jpg?$ORIGIN_JPG$" src="//images.samsung.com/is/image/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Desktop_StartFrame.jpg?$ORIGIN_JPG$" alt="" style="transition: visibility 0.2s ease 0s, opacity 0.2s ease 0s;">
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page" an-tr="hd01_home kv carousel-home-image-swipe2" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv2" data-swiper-slide-index="1" style="width: 1143px; opacity: 0; transform: translate3d(-2286px, 0px, 0px); transition-duration: 400ms;" aria-hidden="true">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--black home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Galaxy Note20 5G</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Galaxy Note20 5G</h2>
+                            <p class="home-kv-carousel__desc">Power your work and play like never before. Starting from $4.17/mo for 36 mos<sup>⊕</sup> or $149.99 with eligible Android device trade-in.ᶿ</p>
+                            <p class="home-kv-carousel__desc">Power your work and play like never before. Starting from $4.17/mo for 36 mos<sup>⊕</sup> or $149.99 with eligible Android device trade-in.ᶿ</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--underline cta--black" href="/us/smartphones/galaxy-note20-5g/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv2:galaxy note20 5g:button1:learn more:20200923" tabindex="-1" aria-hidden="true">
+                                            Learn more
+                                        </a>
+                                        
+                                        
+                                    
+        
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--black" href="/us/smartphones/galaxy-note20-5g/buy/?" title="Buy Now" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv2:galaxy note20 5g:button2:pre order now:20200922" tabindex="-1" aria-hidden="true">
+                                            Buy now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            <div class="image image--main-loaded">
+                                
+                                
+                                <img class="image__preview responsive-img image--loaded image--hide" data-desktop-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-m.jpg?$LazyLoad_Home_JPG$" alt="" src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg">
+                                <img class="image__main responsive-img image--loaded" data-desktop-src="https://images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-d.jpg" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/110220/hp-note20-m.jpg?$ORIGIN_JPG$" alt="" src="">
+                                -
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page" an-tr="hd01_home kv carousel-home-image-swipe3" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv3" data-swiper-slide-index="2" style="width: 1143px; opacity: 0; transform: translate3d(-3429px, 0px, 0px); transition-duration: 400ms;" aria-hidden="true">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--black home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Black Friday TV offers start now</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Black Friday TV offers start now</h2>
+                            <p class="home-kv-carousel__desc">Plus, get in-home installation and buy and try select products with our<br>100-day, risk-free trial.</p>
+                            <p class="home-kv-carousel__desc">Plus, get in-home installation and buy and try select products with our 100-day, risk-free trial.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--black" href="/us/shop/all-deals/tv-and-home-theater-deals/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv3:black friday tv offers start now:button1:shop now:20201102" tabindex="-1" aria-hidden="true">
+                                            Shop now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            <div class="image image--main-loaded">
+                                
+                                
+                                <img class="image__preview responsive-img image--loaded image--hide" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/112320/TVs-Holiday-KV-DT-1440x810.jpg?$LazyLoad_Home_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/112320/TVs-Holiday-KV-MB-720x1280.jpg?$LazyLoad_Home_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/112320/TVs-Holiday-KV-DT-1440x810.jpg?$LazyLoad_Home_JPG$">
+                                <img class="image__main responsive-img image--loaded" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/112320/TVs-Holiday-KV-DT-1440x810.jpg?$ORIGIN_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/112320/TVs-Holiday-KV-MB-720x1280.jpg?$ORIGIN_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/112320/TVs-Holiday-KV-DT-1440x810.jpg?$ORIGIN_JPG$" style="">
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page" an-tr="hd01_home kv carousel-home-image-swipe4" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv4" data-swiper-slide-index="3" style="width: 1143px; opacity: 0; transform: translate3d(-4572px, 0px, 0px); transition-duration: 400ms;" aria-hidden="true">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--black home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">The world’s first do-it-all screen⁷</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">The world’s first do-it-all screen⁷</h2>
+                            <p class="home-kv-carousel__desc">Introducing our smartest monitor yet.</p>
+                            <p class="home-kv-carousel__desc">Introducing our smartest monitor yet.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--underline cta--black" href="/us/monitors/smart-monitors/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv4:the worlds first do it all screen:button1:learn more:20201119" tabindex="-1" aria-hidden="true">
+                                            Learn more
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--black" href="/us/computing/monitors/smart-monitors/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv4:the worlds first do it all screen:button2:shop now:20201119" tabindex="-1" aria-hidden="true">
+                                            Shop now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            <div class="image image--main-loaded">
+                                
+                                
+                                <img class="image__preview responsive-img image--loaded image--hide" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/111620/smart-monitors-hero-kv-pc.jpg?$LazyLoad_Home_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/111620/smart-monitors-hero-kv-mo.jpg?$LazyLoad_Home_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/111620/smart-monitors-hero-kv-pc.jpg?$LazyLoad_Home_JPG$">
+                                <img class="image__main responsive-img image--loaded" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/111620/smart-monitors-hero-kv-pc.jpg?$ORIGIN_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/111620/smart-monitors-hero-kv-mo.jpg?$ORIGIN_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/111620/smart-monitors-hero-kv-pc.jpg?$ORIGIN_JPG$" style="">
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page swiper-slide-prev" an-tr="hd01_home kv carousel-home-image-swipe5" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv5" data-swiper-slide-index="4" style="width: 1143px; opacity: 0; transform: translate3d(-5715px, 0px, 0px); transition-duration: 400ms;" aria-hidden="true">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--black home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Give the gift of clean</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Give the gift of clean</h2>
+                            <p class="home-kv-carousel__desc">The Jet Stick Vacuum and Samsung Clean Station™️ are this season's answer for the ultimate dust-free clean.</p>
+                            <p class="home-kv-carousel__desc">The Jet Stick Vacuum and Samsung Clean Station™️ are this season's answer for the ultimate dust-free clean.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--underline cta--black" href="/us/vacuums/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv5:give the gift of clean:button1:learn more:20201102" tabindex="-1" aria-hidden="true">
+                                            Learn more
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--black" href="/us/home-appliances/vacuums/all-vacuums/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv5:give the gift of clean:button2:shop now:20201105" tabindex="-1" aria-hidden="true">
+                                            Shop now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            <div class="image image--main-loaded">
+                                
+                                
+                                <img class="image__preview responsive-img image--loaded image--hide" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/111720/VS75_CleanStation_Lifestyle_2_Hero-KV-D.jpg?$LazyLoad_Home_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/111720/REVISED-VS7500_Power-Stick-Jet_Lifestyle_Hero-KV-M.jpg?$LazyLoad_Home_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/111720/VS75_CleanStation_Lifestyle_2_Hero-KV-D.jpg?$LazyLoad_Home_JPG$">
+                                <img class="image__main responsive-img image--loaded" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/111720/VS75_CleanStation_Lifestyle_2_Hero-KV-D.jpg?$ORIGIN_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/111720/REVISED-VS7500_Power-Stick-Jet_Lifestyle_Hero-KV-M.jpg?$ORIGIN_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/111720/VS75_CleanStation_Lifestyle_2_Hero-KV-D.jpg?$ORIGIN_JPG$" style="">
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page swiper-slide-active" an-tr="hd01_home kv carousel-home-image-swipe6" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv6" data-swiper-slide-index="5" style="width: 1143px; opacity: 1; transform: translate3d(-6858px, 0px, 0px); transition-duration: 400ms;">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--white home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Galaxy Tab S7 | Tab S7+</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Galaxy Tab S7 | Tab S7+</h2>
+                            <p class="home-kv-carousel__desc">Get up to $500 off the new Galaxy Tab S7 or Galaxy Tab S7+ with eligible trade-in.ᶿ<br>Plus, get 3 months of Xbox Game Pass Ultimate and controller with Galaxy Tab S7+ purchase.</p>
+                            <p class="home-kv-carousel__desc">Get up to $500 off the new Galaxy Tab S7 or Galaxy Tab S7+ with eligible trade-in.ᶿ<br>Plus, get 3 months of Xbox Game Pass Ultimate and controller with Galaxy Tab S7+ purchase.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--underline cta--white" href="/us/tablets/tab-s7/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv6:galaxy tab s7 tab s7 plus:button1:learn more:20201120">
+                                            Learn more
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--white" href="/us/tablets/tab-s7/buy/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv6:galaxy tab s7 tab s7 plus:button2:buy now:20201120">
+                                            Buy now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            <div class="image image--main-loaded">
+                                
+                                
+                                <img class="image__preview responsive-img image--loaded image--hide" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/112020/HP_KV_Carousel_Tab-S7-Game_D.jpg?$LazyLoad_Home_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/112020/HP_KV_Carousel_Tab-S7-Game_MO.jpg?$LazyLoad_Home_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/112020/HP_KV_Carousel_Tab-S7-Game_D.jpg?$LazyLoad_Home_JPG$">
+                                <img class="image__main responsive-img image--loaded" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/112020/HP_KV_Carousel_Tab-S7-Game_D.jpg?$ORIGIN_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/112020/HP_KV_Carousel_Tab-S7-Game_MO.jpg?$ORIGIN_JPG$" alt="" src="//images.samsung.com/is/image/samsung/assets/us/home/112020/HP_KV_Carousel_Tab-S7-Game_D.jpg?$ORIGIN_JPG$" style="">
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            <div class="home-kv-carousel__slide bg-white swiper-slide indicator-page swiper-slide-duplicate swiper-slide-next" an-tr="hd01_home kv carousel-home-image-swipe1" an-ca="indication" an-ac="carousel" an-la="carousel:swipe:kv1" data-swiper-slide-index="0" aria-hidden="true" style="width: 1143px; opacity: 0; transform: translate3d(-8001px, 0px, 0px); transition-duration: 400ms;">
+                    <div class="home-kv-carousel__slide-inner" style="height: 642.938px;">
+                        <div class="home-kv-carousel__text-wrap text-color--black home-kv-carousel__text-wrap--desktop-top-center home-kv-carousel__text-wrap--mobile-top-center  ">
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Black Friday mode<br>is on</h2>
+                            <h2 class="home-kv-carousel__headline" role="heading" aria-level="2">Black Friday mode<br>is on</h2>
+                            <p class="home-kv-carousel__desc">Wrap up something extra-special for the holiday with Black Friday pricing on our hottest products of the year.</p>
+                            <p class="home-kv-carousel__desc">Wrap up something extra-special for the holiday with Black Friday pricing on our hottest products of the year.</p>
+                            
+                            <div class="home-kv-carousel__cta-wrap">
+                                
+                                    
+                                    
+                                        <a class="cta cta--contained cta--black" href="/us/shop/all-deals/" an-tr="hd01_home kv carousel-home-cta-kv" an-ca="home content click" an-ac="kv" an-la="kv1:black friday mode is on:button1:shop now:20201110" tabindex="-1" aria-hidden="true">
+                                            Shop now
+                                        </a>
+                                        
+                                        
+                                    
+                                    
+                                
+                            </div>
+                        </div>
+                        <div class="home-kv-carousel__background-media-wrap indicator-background">
+                            
+                            
+                            <div class="video lazy-load-man" data-image-default="true" data-video-embed="true" data-video-type="mp4" data-video-data="{ 
+                                &quot;desktopSrc&quot;: &quot;//images.samsung.com/is/content/samsung/assets/us/home/111920/HolidayCreative-BlackFriday_Desktop-EndFrame-new.mp4&quot;,
+                                &quot;mobileSrc&quot;: &quot;//images.samsung.com/is/content/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Mobile-5kbps.mp4&quot;,
+                                &quot;title&quot;: &quot;Black Friday mode is on&quot;,
+                                &quot;caption&quot;: &quot;&quot;,
+                                &quot;muted&quot;: true,
+                                &quot;autoplay&quot;: false,
+                                &quot;loop&quot;: false,
+                                &quot;controls&quot;: false
+                                }">
+                                <div class="image image--main-loaded default-image--show" style="width: 100%; height: 100%;">
+                                    
+                                    <img class="image__main responsive-img" data-desktop-src="//images.samsung.com/is/image/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Desktop_StartFrame.jpg?$ORIGIN_JPG$" data-mobile-src="//images.samsung.com/is/image/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Mobile_StartFrame.jpg?$ORIGIN_JPG$" src="//images.samsung.com/is/image/samsung/assets/us/home/11132020/HolidayCreative-BlackFriday_Desktop_StartFrame.jpg?$ORIGIN_JPG$" alt="" style="transition: visibility 0.2s ease 0s, opacity 0.2s ease 0s;">
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div></div>
+            
+            <div class="arrow-indicator-wrap">
+                <button class="arrow-indicator arrow-indicator--contained arrow-indicator--prev" an-tr="hd01_home kv carousel-home-image-arrow" an-ca="indication" an-ac="carousel" an-la="carousel:arrow:kv left" tabindex="0" role="button" aria-label="Previous slide" style="display: block;">
+                    <span class="hidden">Previous</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" focusable="false" role="presentation" aria-hidden="true" tabindex="-1" disabled="disabled" clickable="false">
+                        <g fill="none" fill-rule="evenodd">
+                            <g>
+                                <circle cx="20" cy="20" r="20"></circle>
+                                <g fill-rule="nonzero">
+                                    <path d="M15.179 3.173L16.043 4.077 7.765 12 16.043 19.923 15.179 20.827 5.957 12z" transform="translate(8 8)"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+                <button class="arrow-indicator arrow-indicator--contained arrow-indicator--next" an-tr="hd01_home kv carousel-home-image-arrow" an-ca="indication" an-ac="carousel" an-la="carousel:arrow:kv right" tabindex="0" role="button" aria-label="Next slide" style="display: block;">
+                    <span class="hidden">Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" focusable="false" role="presentation" aria-hidden="true" tabindex="-1" disabled="disabled" clickable="false">
+                        <g fill="none" fill-rule="evenodd">
+                            <g>
+                                <circle cx="20" cy="20" r="20"></circle>
+                                <g fill-rule="nonzero">
+                                    <path d="M7.957 4.077L8.821 3.173 18.043 12 8.821 20.827 7.957 19.923 16.235 12z" transform="translate(8 8)"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div><div class="home-kv-carousel__no-swiping-area--right" style="width: 0px;"></div>	
+        <div class="home-kv-carousel__indicator-wrap">
+            <div class="indicator label-indicator" data-indicator-data="{
+                &quot;type&quot;: &quot;label-indicator&quot;,
+                &quot;play&quot;: true,
+                &quot;autoRolling&quot;: true,
+                &quot;infiniteRolling&quot;: true
+                }">
+                <div class="indicator-wrap">
+                    <button class="indicator__controls" an-tr="hd01_home kv carousel-home-image-action" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv stop">
+                        <svg class="play" focusable="false" role="presentation" aria-hidden="true" tabindex="-1" disabled="disabled" clickable="false">
+                            <use xlink:href="#play-bold" href="#play-bold"></use>
+                        </svg>
+                        <svg class="pause" focusable="false" role="presentation" aria-hidden="true" tabindex="-1" disabled="disabled" clickable="false">
+                            <use xlink:href="#pause-bold" href="#pause-bold"></use>
+                        </svg>
+                        <span class="hidden">stop</span>
+                    </button>
+                    <div class="indicator__list-wrap">
+                        <div class="indicator__list" role="tablist">
+                            
+                            <button class="indicator__item" role="tab" data-indicator-delay="5000" an-tr="hd01_home kv carousel-home-text-carousel" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv1" aria-selected="false">
+                                <span class="indicator__dot-wrap">
+                                    <span class="indicator__dot">
+                                        <span class="indicator__dot-inner"></span>
+                                    </span>
+                                    <span class="hidden">Black Friday</span>
+                                </span>
+                                <span class="indicator__label-wrap">
+                                    <span class="indicator__label-line">
+                                        <span class="indicator__label-line-filled" style=""></span>
+                                    </span>
+                                    <span class="indicator__label">Black Friday</span>
+                                </span>
+                            </button>
+                            
+                            <button class="indicator__item" role="tab" data-indicator-delay="5000" an-tr="hd01_home kv carousel-home-text-carousel" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv2" aria-selected="false">
+                                <span class="indicator__dot-wrap">
+                                    <span class="indicator__dot">
+                                        <span class="indicator__dot-inner"></span>
+                                    </span>
+                                    <span class="hidden">Galaxy Note20 5G</span>
+                                </span>
+                                <span class="indicator__label-wrap">
+                                    <span class="indicator__label-line">
+                                        <span class="indicator__label-line-filled" style=""></span>
+                                    </span>
+                                    <span class="indicator__label">Galaxy Note20 5G</span>
+                                </span>
+                            </button>
+                            
+                            <button class="indicator__item" role="tab" data-indicator-delay="5000" an-tr="hd01_home kv carousel-home-text-carousel" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv3" aria-selected="false">
+                                <span class="indicator__dot-wrap">
+                                    <span class="indicator__dot">
+                                        <span class="indicator__dot-inner"></span>
+                                    </span>
+                                    <span class="hidden">TV Offers</span>
+                                </span>
+                                <span class="indicator__label-wrap">
+                                    <span class="indicator__label-line">
+                                        <span class="indicator__label-line-filled" style=""></span>
+                                    </span>
+                                    <span class="indicator__label">TV Offers</span>
+                                </span>
+                            </button>
+                            
+                            <button class="indicator__item" role="tab" data-indicator-delay="5000" an-tr="hd01_home kv carousel-home-text-carousel" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv4" aria-selected="false">
+                                <span class="indicator__dot-wrap">
+                                    <span class="indicator__dot">
+                                        <span class="indicator__dot-inner"></span>
+                                    </span>
+                                    <span class="hidden">Smart Monitors</span>
+                                </span>
+                                <span class="indicator__label-wrap">
+                                    <span class="indicator__label-line">
+                                        <span class="indicator__label-line-filled" style=""></span>
+                                    </span>
+                                    <span class="indicator__label">Smart Monitors</span>
+                                </span>
+                            </button>
+                            
+                            <button class="indicator__item indicator__item--not-hover" role="tab" data-indicator-delay="5000" an-tr="hd01_home kv carousel-home-text-carousel" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv5" aria-selected="false">
+                                <span class="indicator__dot-wrap">
+                                    <span class="indicator__dot">
+                                        <span class="indicator__dot-inner"></span>
+                                    </span>
+                                    <span class="hidden">Floor Care</span>
+                                </span>
+                                <span class="indicator__label-wrap">
+                                    <span class="indicator__label-line">
+                                        <span class="indicator__label-line-filled" style=""></span>
+                                    </span>
+                                    <span class="indicator__label">Floor Care</span>
+                                </span>
+                            </button>
+                            
+                            <button class="indicator__item indicator__item--active" role="tab" data-indicator-delay="5000" an-tr="hd01_home kv carousel-home-text-carousel" an-ca="indication" an-ac="carousel" an-la="carousel:index:kv6" aria-selected="true">
+                                <span class="indicator__dot-wrap">
+                                    <span class="indicator__dot">
+                                        <span class="indicator__dot-inner"></span>
+                                    </span>
+                                    <span class="hidden">Galaxy Tab S7</span>
+                                </span>
+                                <span class="indicator__label-wrap">
+                                    <span class="indicator__label-line">
+                                        <span class="indicator__label-line-filled" style=""></span>
+                                    </span>
+                                    <span class="indicator__label">Galaxy Tab S7</span>
+                                </span>
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-video" role="dialog" aria-modal="true">
+            <div class="popup-video__dimmed"></div>
+            <div class="popup-video__looping--start" tabindex="0"></div>
+            <div class="popup-video__video-wrap" tabindex="0" style="width: 1028.7px; height: 578.644px;">
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </div>
+            <button class="popup-video__btn-video-close">
+                <span class="hidden">Close</span>
+                <svg class="icon" focusable="false" role="presentation" aria-hidden="true" tabindex="-1" disabled="disabled" clickable="false">
+                    <use xlink:href="#cancel-close-regular" href="#cancel-close-regular"></use>
+                </svg>
+            </button>
+            <div class="popup-video__looping--end" tabindex="0"></div>
+        </div>
+        
+    </section>
+    
+        
+            
+      
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+            
+        
+    
+        
+        
+            
+        
+            
+        
+    
+        
+        
+            
+        
+            
+        
+    
+    
+    </div>
